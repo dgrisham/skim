@@ -93,7 +93,7 @@ _skim_opts_completion() {
     return 0
     ;;
   --color)
-    COMPREPLY=( $(compgen -W "dark light 16 bw" -- "$cur") )
+    COMPREPLY=( $(compgen -W "dark light 16 bw empty" -- "$cur") )
     return 0
     ;;
   --history)

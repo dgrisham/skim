@@ -133,6 +133,26 @@ impl ColorTheme {
         }
     }
 
+    fn empty() -> Self {
+        ColorTheme {
+            fg:               Color::Default,
+            bg:               Color::Default,
+            matched:          Color::Default,
+            matched_bg:       Color::Default,
+            current:          Color::Default,
+            current_bg:       Color::Default,
+            current_match:    Color::Default,
+            current_match_bg: Color::Default,
+            spinner:          Color::Default,
+            info:             Color::Default,
+            prompt:           Color::Default,
+            cursor:           Color::Default,
+            selected:         Color::Default,
+            header:           Color::Default,
+            border:           Color::Default,
+        }
+    }
+
     fn from_options(color: &str) -> Self {
         let mut theme = ColorTheme::dark256();
         for pair in color.split(',') {
@@ -142,6 +162,7 @@ impl ColorTheme {
                     "molokai"  => ColorTheme::molokai256(),
                     "light"    => ColorTheme::light256(),
                     "16"       => ColorTheme::default16(),
+                    "empty"    => ColorTheme::empty(),
                     "dark" | "default" | _ => ColorTheme::dark256(),
                 };
                 continue;
